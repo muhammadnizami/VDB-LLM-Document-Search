@@ -7,12 +7,12 @@ import re
 from tqdm import tqdm
 
 # Set up your OpenAI API key
-openai.api_key = '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'
+openai.api_key = '<OPENAI_API_KEY>'
 
 # Set up QDrant connection
 qdrant_client = QdrantClient(
     url="https://992f0808-9ddb-435e-b5cc-2395e73f9b44.ap-northeast-1-0.aws.cloud.qdrant.io:6333",
-    api_key="vIAqiIF5uirqCMSUgcAS8GFxjtKshfTWF4OH-TlrgByommV8iZ-uLg")
+    api_key="<QDRANT_API_KEY>")
 collection_name = "pdf_chunks"
 
 def extract_pdf_chunks(pdf_path, chunk_size, overlap):
