@@ -5,14 +5,18 @@ from qdrant_client.http.models import Distance, VectorParams, PointStruct
 import json
 import re
 from tqdm import tqdm
+import dotenv
+import os
+
+dotenv.load_dotenv()
 
 # Set up your OpenAI API key
-openai.api_key = '<OPENAI_API_KEY>'
+openai.api_key = os.environ.get("OPENAI_API_KEY")
 
 # Set up QDrant connection
 qdrant_client = QdrantClient(
-    url="https://992f0808-9ddb-435e-b5cc-2395e73f9b44.ap-northeast-1-0.aws.cloud.qdrant.io:6333",
-    api_key="<QDRANT_API_KEY>")
+    url=os.environ.get("QDRANT_URL"),
+    api_key=os.environ.get("QDRANT_API_KEY"))
 collection_name = "pdf_chunks"
 
 def extract_pdf_chunks(pdf_path, chunk_size, overlap):

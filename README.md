@@ -20,7 +20,7 @@ Before you begin, ensure you have the following:
 
 2. **API Keys**
 
-Open main.py and replace OpenAI API key, QDrant URL, and QDrant API key with the one you got.
+Open .env and replace OpenAI API key, QDrant URL, and QDrant API key with the one you got.
 
 ## Running the code
 
